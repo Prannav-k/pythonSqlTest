@@ -19,11 +19,11 @@ class LoanSchema(Base):
                             self.name, self.fullname, self.nickname)
 
 class LoanContract(ContractHandler):
-    def __init__(self):
+    def __init__(self,session):
+        self.session=session
         super()
     
     def create(self):
-        self.schema
         loan = LoanSchema(name='ed', fullname='Ed Jones', nickname='edsnickname')
         self.updateState(loan)
         
