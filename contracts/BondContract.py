@@ -4,18 +4,20 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from Base import Base
+from ContractHandler import ContractHandler
+
 engine = create_engine('sqlite:///test.db', echo=True)
 
 
-class User(Base):
-    __tablename__ = 'users'
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    fullname = Column(String)
-    nickname = Column(String)
-    def __repr__(self):
-       return "<User(name='%s', fullname='%s', nickname='%s')>" % (
-                            self.name, self.fullname, self.nickname)
+# class User(Base):
+#     __tablename__ = 'users'
+#     id = Column(Integer, primary_key=True)
+#     name = Column(String)
+#     fullname = Column(String)
+#     nickname = Column(String)
+#     def __repr__(self):
+#        return "<User(name='%s', fullname='%s', nickname='%s')>" % (
+#                             self.name, self.fullname, self.nickname)
 
 
 
@@ -29,3 +31,5 @@ class User(Base):
 # session.add(ed_user)
 # session.commit()
 # session.close()
+class BondContract:
+    pass
